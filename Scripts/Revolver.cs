@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Revlover : MonoBehaviour {
+public class Revolver : MonoBehaviour {
 	
 	public int speed;
 	public Vector3 direction;
