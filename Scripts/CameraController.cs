@@ -35,8 +35,13 @@ public class CameraController : MonoBehaviour {
 			if(Physics.Raycast(ray, out hit, Mathf.Infinity)){
 				GameObject target = hit.transform.gameObject;
 
-				if(selectedObject != null && target.tag == selectedObject.tag){
-					deselectObject(target);
+				if(selectedObject != null){
+					if(target.tag == selectedObject.tag){
+						deselectObject(target);
+					} else {
+						(selectedObject.GetComponent("Halo")as Behaviour).enabled = false;
+						selectObject(target);
+					}
 				} else {
 					selectObject(target);
 				}
